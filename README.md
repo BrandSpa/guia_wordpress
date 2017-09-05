@@ -8,9 +8,9 @@ reemplazas **[servidor_ip]** con la ip del servidor.
 ssh root@[servidor_ip]
 ```
 
-#### una vez adentro, debes correr estos comandos:
+#### Una vez adentro, debes correr estos comandos:
 
-#### actualizar los paquetes:
+#### Actualizar los paquetes:
 
 ```bash
 sudo apt-get update
