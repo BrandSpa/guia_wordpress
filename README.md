@@ -1,40 +1,45 @@
 ## Instalar wordpress en ubuntu 16.04
------
 
 Correr primero este comando que actualiza todos los paquetes.
 
-Primero debes acceder al servidor:
+```bash
+sudo apt-get update
+```
 
-reemplazas [ip] con la ip del servidor.
+#### Primero debes acceder al servidor:
+
+reemplazas **[ip]** con la ip del servidor.
 
 ```bash
 ssh root@[ip]
 ```
 
-Luego se debes actualizar los paquetes:
+#### Luego se debes actualizar los paquetes:
 
 ```bash
 sudo apt-get update
 ```
-Instalar paquetes basicos:
+
+#### Instalar paquetes basicos:
 
 ```bash
 sudo apt-get install curl wget git zip
 ```
 
-Instalar nginx:
+#### Instalar nginx:
 
 ```bash
 sudo apt-get install nginx -y
 ```
 
-Instalar mysql:
+#### Instalar mysql:
+En la instalación tienes que crear una contraseña. tenla a mano y que sea segura.
 
 ```bash
 sudo apt-get install mysql-server -y
 ```
 
-Crear base de datos:
+ #### Crear base de datos:
 
 reemplazas [nombre] con el nombre que debe tener la base de datos.
 
