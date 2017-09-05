@@ -19,7 +19,7 @@ sudo apt-get update
 #### Instalar paquetes basicos:
 
 ```bash
-sudo apt-get install curl wget git zip
+sudo apt-get install curl wget git zip -y
 ```
 
 #### Instalar nginx:
@@ -42,7 +42,8 @@ Reemplazas [bd_nombre] con el nombre que debe tener la base de datos.
 Reemplazas [mysql_contraseña] con la contraseña de mysql.
 ```bash
 mysql -u root -p[mysql_contraseña]
-mysql > create database [bd_nombre]
+create database [bd_nombre];
+exit;
 ```
 
 #### Instalar PHP:
