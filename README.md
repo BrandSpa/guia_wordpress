@@ -40,9 +40,12 @@ sudo apt-get install mysql-server -y
 Reemplazas [bd_nombre] con el nombre que debe tener la base de datos.
 
 Reemplazas [mysql_contraseña] con la contraseña de mysql.
+
 ```bash
 mysql -u root -p[mysql_contraseña]
+
 create database [bd_nombre];
+
 exit;
 ```
 
