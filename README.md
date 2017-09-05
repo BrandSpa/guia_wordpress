@@ -4,8 +4,11 @@
 Correr primero este comando que actualiza todos los paquetes.
 
 Primero debes acceder al servidor:
+
+reemplazas [ip] con la ip del servidor.
+
 ```bash
-ssh root@ip
+ssh root@[ip]
 ```
 
 Luego se debes actualizar los paquetes:
@@ -41,6 +44,12 @@ mysql --u root --p[contraseña]
 mysql > create database [nombre]
 ```
 
+Instalar PHP:
+
+```bash
+sudo apt-get install php-fpm php-mysql -y
+```
+
 Instalar wordpress:
 
 ```bash
@@ -60,3 +69,47 @@ Editar el archivo de configuración con el editor nano:
 ```
 
 Cierras el editor con ctrl + x y oprimes la tecla Y y luego enter para guardar los cambios.
+
+Configurar nginx vhost:
+
+```bash
+  cd /etc/nginx/sites-available
+  nano default
+```
+
+borras todo lo que tenga y lo reemplazas con esto:
+
+Reemplazar [dominio] con el dominio que se necesite.
+
+```bash
+server {
+    listen 80;
+
+    root /var/www/wordpress/public;
+    index index.php index.html index.htm;
+
+    server_name [dominio] www.[dominio];
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        try_files $uri /index.php =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+
+```
+
+Reiniciar nginx:
+
+```bash
+  sudo service nginx
+```
+
+Y listo!
