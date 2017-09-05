@@ -1,11 +1,5 @@
 ## Instalar wordpress en ubuntu 16.04
 
-Correr primero este comando que actualiza todos los paquetes.
-
-```bash
-sudo apt-get update
-```
-
 #### Primero debes acceder al servidor:
 
 reemplazas **[servidor_ip]** con la ip del servidor.
@@ -14,7 +8,9 @@ reemplazas **[servidor_ip]** con la ip del servidor.
 ssh root@[servidor_ip]
 ```
 
-#### Luego se debes actualizar los paquetes:
+#### una vez adentro, debes correr estos comandos:
+
+#### actualizar los paquetes:
 
 ```bash
 sudo apt-get update
