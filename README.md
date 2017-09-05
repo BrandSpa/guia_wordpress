@@ -33,13 +33,13 @@ sudo apt-get install nginx -y
 ```
 
 #### Instalar mysql:
-En la instalación tienes que crear una contraseña. tenla a mano y que sea segura.
+En la instalación tienes que crear una contraseña. Tenla a mano y que sea segura.
 
 ```bash
 sudo apt-get install mysql-server -y
 ```
 
- #### Crear base de datos:
+#### Crear base de datos:
 
 reemplazas [nombre] con el nombre que debe tener la base de datos.
 
@@ -49,40 +49,40 @@ mysql --u root --p[contraseña]
 mysql > create database [nombre]
 ```
 
-Instalar PHP:
+#### Instalar PHP:
 
 ```bash
 sudo apt-get install php-fpm php-mysql -y
 ```
 
-Instalar wordpress:
+#### Instalar wordpress:
 
 ```bash
 curl -O https://wordpress.org/latest.zip
 unzip latest
 ```
 
-Ingresas a la carpeta que se descomprimio y crear el copias el archivo de configuración:
+#### Ingresas a la carpeta que se descomprimio y copias el archivo de configuración:
 ```bash
   cd wordpress
   cp wp-config-sample.php wp-config.php
 ```
 
-Editar el archivo de configuración con el editor nano:
+#### Editar el archivo de configuración con el editor nano:
 ```bash
   nano wp-config.php
 ```
 
 Cierras el editor con ctrl + x y oprimes la tecla Y y luego enter para guardar los cambios.
 
-Configurar nginx vhost:
+#### Configurar nginx vhost:
 
 ```bash
   cd /etc/nginx/sites-available
   nano default
 ```
 
-borras todo lo que tenga y lo reemplazas con esto:
+borras todo lo que tenga el archivos y lo reemplazas con esto:
 
 Reemplazar [dominio] con el dominio que se necesite.
 
@@ -111,7 +111,7 @@ server {
 
 ```
 
-Reiniciar nginx:
+#### Reiniciar nginx:
 
 ```bash
   sudo service nginx
