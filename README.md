@@ -8,10 +8,10 @@ sudo apt-get update
 
 #### Primero debes acceder al servidor:
 
-reemplazas **[ip]** con la ip del servidor.
+reemplazas **[servidor_ip]** con la ip del servidor.
 
 ```bash
-ssh root@[ip]
+ssh root@[servidor_ip]
 ```
 
 #### Luego se debes actualizar los paquetes:
@@ -33,7 +33,7 @@ sudo apt-get install nginx -y
 ```
 
 #### Instalar mysql:
-En la instalación tienes que crear una contraseña. Tenla a mano y que sea segura.
+Tienes que ingresar la contraseña.
 
 ```bash
 sudo apt-get install mysql-server -y
@@ -41,12 +41,12 @@ sudo apt-get install mysql-server -y
 
 #### Crear base de datos:
 
-reemplazas [nombre] con el nombre que debe tener la base de datos.
+Reemplazas [bd_nombre] con el nombre que debe tener la base de datos.
 
-reemplazas [contraseña] con la contraseña de mysql.
+Reemplazas [mysql_contraseña] con la contraseña de mysql.
 ```bash
-mysql --u root --p[contraseña]
-mysql > create database [nombre]
+mysql --u root --p[mysql_contraseña]
+mysql > create database [bd_nombre]
 ```
 
 #### Instalar PHP:
